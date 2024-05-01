@@ -1,10 +1,10 @@
-import baseballgame.HexBaseBallGame
+import baseballgame.BaseBallGame
 import inline.stringtoint
 
 fun main() {
     println("환영합니다!")
 
-    val hexBaseBallGame = HexBaseBallGame()
+    val baseBallGame = BaseBallGame('F', 5)
     var attempt = 0
     val attempts = mutableListOf<Int>()
 
@@ -18,20 +18,20 @@ fun main() {
         when (num_input) {
             1 -> {
                 println("\n< 숫자 야구 게임을 시작합니다 >")
-                hexBaseBallGame.makeRandomAnswer()
-                val guessCondition = hexBaseBallGame.getGuessCondition()
+                baseBallGame.makeRandomAnswer()
+                val guessCondition = baseBallGame.getGuessCondition()
 
                 while (true) {
-                    print("${guessCondition.first} ~ ${guessCondition.second}까지의 숫자를 ${guessCondition.third}개 입력하세요. : ")
+                    print("0 ~ ${guessCondition.first}까지의 숫자를 ${guessCondition.second}개 입력하세요. : ")
                     val input = readLine() ?: ""
 
-                    if (!hexBaseBallGame.validateInput(input)) {
+                    if (!baseBallGame.validateInput(input)) {
                         println("올바르지 않은 입력값입니다.\n")
                         continue
                     }
 
                     attempt += 1
-                    val pair = hexBaseBallGame.checkAnswer(input)
+                    val pair = baseBallGame.checkAnswer(input)
                     if (pair.first == 5) {
                         println("정답입니다!\n")
                         attempts.add(attempt)
