@@ -9,7 +9,7 @@ fun main() {
     val attempts = mutableListOf<Int>()
 
     while (true) {
-        println("1. 숫자 야구 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
+        println("\n1. 숫자 야구 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
         print("원하시는 번호를 입력해주세요. : ")
 
         val input = readLine() ?: ""
@@ -54,7 +54,7 @@ fun main() {
                 return
             }
 
-            else -> println(" < 1 ~ 3 사이의 숫자를 입력해주세요! > ")
+            else -> println("\n< 1 ~ 3 사이의 숫자를 입력해주세요! > ")
         }
     }
 }
