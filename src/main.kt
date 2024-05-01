@@ -1,10 +1,10 @@
 import baseballgame.BaseBallGame
+import inline.charCodeToInt
 import inline.stringtoint
 
 fun main() {
     println("환영합니다!")
 
-    val baseBallGame = BaseBallGame('F', 5)
     var attempt = 0
     val attempts = mutableListOf<Int>()
 
@@ -18,6 +18,37 @@ fun main() {
         when (num_input) {
             1 -> {
                 println("\n< 숫자 야구 게임을 시작합니다 >")
+                print("맞출 숫자의 0부터 n까지 범위를 지정해주세요! ")
+
+                var end = ""
+                while (true) {
+                    println("(1 ~ 'F'까지 가능)")
+                    print("n 은? :")
+                    end = readLine() ?: ""
+
+                    if (end.length == 1) {
+                        if (charCodeToInt(end[0]) != -1) {
+                            break
+                        }
+                    }
+                }
+
+                print("맞출 숫자의 갯수 cnt를 지정해주세요! : ")
+                var howmany = ""
+                while (true) {
+                    println("(1 ~ ${(charCodeToInt(end[0]) + 1)}까지 가능)")
+                    print("cnt 는? :")
+                    howmany = readLine() ?: ""
+
+                    if (stringtoint(howmany) != -1) {
+                        if (stringtoint(howmany) <= (charCodeToInt(end[0]) + 1)) {
+                            break
+                        }
+                    }
+                }
+
+                val baseBallGame = BaseBallGame(end[0], howmany.toInt())
+
                 baseBallGame.makeRandomAnswer()
                 val guessCondition = baseBallGame.getGuessCondition()
 
@@ -32,7 +63,7 @@ fun main() {
 
                     attempt += 1
                     val pair = baseBallGame.checkAnswer(input)
-                    if (pair.first == 5) {
+                    if (pair.first == guessCondition.second) {
                         println("정답입니다!\n")
                         attempts.add(attempt)
                         attempt = 0

@@ -9,8 +9,8 @@ inline fun charCodeToInt(ch: Char): Int {
             'B' -> return 11
             'C' -> return 12
             'D' -> return 13
-            'F' -> return 14
-            'G' -> return 15
+            'E' -> return 14
+            'F' -> return 15
         }
     }
     return -1
