@@ -19,9 +19,9 @@
 ### A-1. stringtoint.kt
 받은 문자열을 Int 로 변환.
 ### A-2. intoToCharCode.kt
-0 ~ 15 를 hex 코드를 포함한 0 ~ F로 변환.
+0 ~ 15 를 hex 코드를 포함한 0 ~ F 로 변환.
 ### A-3. charCodeToInt.kt
-hex 코드를 포함한 0 ~ F를 0 ~ 15로 변환.
+hex 코드를 포함한 0 ~ F 를 0 ~ 15 로 변환.
 
 ## B. BaseBallGame.kt
 ### B-1. fun getGuessCondition(): Pair<Char, Int>
