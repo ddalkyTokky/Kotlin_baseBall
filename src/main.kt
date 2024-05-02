@@ -12,7 +12,7 @@ fun main() {
         println("\n1. 숫자 야구 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
         print("원하시는 번호를 입력해주세요. : ")
 
-        val input = readLine() ?: ""
+        val input = readlnOrNull() ?: ""
         val num_input = stringtoint(input)
 
         when (num_input) {
@@ -24,10 +24,10 @@ fun main() {
                 while (true) {
                     println("(1 ~ 'F'까지 가능)")
                     print("n 은? :")
-                    end = readLine() ?: ""
+                    end = readlnOrNull() ?: ""
 
                     if (end.length == 1) {
-                        if (charCodeToInt(end[0]) != -1) {
+                        if (charCodeToInt(end[0]) >= 1) {
                             break
                         }
                     }
@@ -38,9 +38,9 @@ fun main() {
                 while (true) {
                     println("(1 ~ ${(charCodeToInt(end[0]) + 1)}까지 가능)")
                     print("cnt 는? :")
-                    howmany = readLine() ?: ""
+                    howmany = readlnOrNull() ?: ""
 
-                    if (stringtoint(howmany) != -1) {
+                    if (stringtoint(howmany) >= 1) {
                         if (stringtoint(howmany) <= (charCodeToInt(end[0]) + 1)) {
                             break
                         }
@@ -54,7 +54,7 @@ fun main() {
 
                 while (true) {
                     print("0 ~ ${guessCondition.first}까지의 숫자를 ${guessCondition.second}개 입력하세요. : ")
-                    val input = readLine() ?: ""
+                    val input = readlnOrNull() ?: ""
 
                     if (!baseBallGame.validateInput(input)) {
                         println("올바르지 않은 입력값입니다.\n")
