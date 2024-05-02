@@ -25,9 +25,15 @@ hex 코드를 포함한 0 ~ F 를 0 ~ 15 로 변환.
 
 ## B. BaseBallGame.kt
 ### B-1. fun getGuessCondition(): Pair<Char, Int>
+맞출 수의 범위와, 맞출 수의 갯수를 반환한다.
 ### B-2. fun makeRandomAnswer()
+입력된 맞출 갯수를 참고해 랜덤 정답값을 생성한다.
 ### B-3. fun checkAnswer(input: String): Pair<Int, Int>
+랜덤 정답값과 사용자 입력값을 비교한다.
+볼, 스트라이크 갯수를 반환한다.
 ### B-4. fun validateInput(input: String): Boolean
+정답값과 비교하기에 앞서, 사용자 입력값을 검증한다.
+길이는 맞는지, 중복된느 값은 없는지, 허용되는 숫자만 있는지 등을 검사한다.
 
 # 4. main.kt
 각종 입출력과 간단한 입력값 검증을 진행함.
